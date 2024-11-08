@@ -33,6 +33,9 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Colors.white,
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(30),
+                ),
               ),
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -67,11 +70,51 @@ class _HomePageState extends State<HomePage> {
                         hintText: "Search..",
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Most Liked Teams",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 200,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [mostlikedteams('')],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget mostlikedteams(image) {
+    return AspectRatio(
+      aspectRatio: 2 / 3,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.green,
+          borderRadius: BorderRadius.circular(20.0),
+          image: DecorationImage(
+              image: NetworkImage(
+                  "https://www.google.com/imgres?q=arsenal&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2F5%2F53%2FArsenal_FC.svg%2F800px-Arsenal_FC.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FArsenal_F.C.&docid=xhkP-H2nIViUHM&tbnid=ULywyj89WO-GpM&vet=12ahUKEwjp1-m5ucyJAxWS-wIHHdkQLdcQM3oFCIgBEAA..i&w=800&h=940&hcb=2&ved=2ahUKEwjp1-m5ucyJAxWS-wIHHdkQLdcQM3oFCIgBEAA")),
         ),
       ),
     );
