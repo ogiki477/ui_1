@@ -93,9 +93,24 @@ class _HomePageState extends State<HomePage> {
                     height: 200,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
-                      children: [mostlikedteams('')],
+                      children: [
+                        mostlikedteams('assets/images/arsenal.jpeg'),
+                        mostlikedteams('assets/images/manu.png'),
+                        mostlikedteams('assets/images/mancity.jpeg'),
+                        mostlikedteams('assets/images/liverpool.png'),
+                        mostlikedteams('assets/images/chelsea.jpg'),
+                      ],
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(20)),
+                  )
                 ],
               ),
             ),
@@ -107,14 +122,29 @@ class _HomePageState extends State<HomePage> {
 
   Widget mostlikedteams(image) {
     return AspectRatio(
-      aspectRatio: 2 / 3,
+      aspectRatio: 2.6 / 3,
       child: Container(
+        margin: const EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
-          color: Colors.green,
           borderRadius: BorderRadius.circular(20.0),
+          color: Colors.green,
           image: DecorationImage(
-              image: NetworkImage(
-                  "https://www.google.com/imgres?q=arsenal&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2F5%2F53%2FArsenal_FC.svg%2F800px-Arsenal_FC.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FArsenal_F.C.&docid=xhkP-H2nIViUHM&tbnid=ULywyj89WO-GpM&vet=12ahUKEwjp1-m5ucyJAxWS-wIHHdkQLdcQM3oFCIgBEAA..i&w=800&h=940&hcb=2&ved=2ahUKEwjp1-m5ucyJAxWS-wIHHdkQLdcQM3oFCIgBEAA")),
+            fit: BoxFit.cover,
+            image: AssetImage(image),
+          ),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              stops: [0.1, 0.9],
+              colors: [
+                Colors.black.withOpacity(.8),
+                Colors.black.withOpacity(.1),
+              ],
+            ),
+          ),
         ),
       ),
     );
