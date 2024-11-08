@@ -102,14 +102,24 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
-                    height: 100,
+                    height: 150,
                     decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(20)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      image: const DecorationImage(
+                        fit: BoxFit.contain,
+                        image: AssetImage('assets/images/premierleague.png'),
+                      ),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
                   )
                 ],
               ),
